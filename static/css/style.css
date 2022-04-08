@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*color: #fff;*/
+  font-family: 'Open Sans', sans-serif;
+}
+
+/** ====================================
+   *          🔰 CONFIG
+  ==================================== **/
+
+:root{
+    --bg-page: #3c4464;
+    --reset: #727ca7;
+    --del:#727ca7;
+    --white: white;
+    --bg-white: white;
+    --bg-btn: #efefef;
+    --eval: #06d6a0;
+    --check: hsl(9, 100%, 43%);
+    --equal: hsl(9deg 100% 53%);
+    --calculator: #2e324d;
+    --font-family: 'Roboto Condensed';
+    --number:#686868;
+}
+
+
+
+body, html {
+  height: 100%;
+  background-color: var(--bg-page);
+  font-family: var(--font-family);
+  font-size: 24px;
+}
+
+
+main.mainContainer {
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  margin: 5% 0;
+}
+
+
+.calculator .board .row_flex {
+    display: flex;
+    width: 100%;
+}
+
+
+.calculator .board .row_flex .col {
+    width: 50%;
+}
+
+.division {
+  background-color: var(--bg-page);
+  height: 0.5rem;
+}
+
+button {
+  border: 0;
+  color: var(--font-color);
+  outline: 0;
+  transition: transform .1s ease;
+  cursor: pointer;
+  
+}
+
+button:active {
+    transform: translateY(5px);
+}
+
+
+.tag a {
+    bottom: 1px;
+    color: var(--font-color);
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    text-decoration: none;
+}
+
+
+.tag a:visited {
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  /*background-color: var(--calculator);*/
+  border-radius: var(--radius);
+  box-shadow: 0 8px darken(var(--calculator), 10%);
+  height: 18rem;
+  min-width: 390px;
+}
+
+.result__row {
+    display: flex;
+    width: 100%;
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.1rem;
+    border-radius: var(--radius);
+    background-color: var(--calculator);
+    height: auto;
+    padding: 1rem 0.8rem;
+    justify-content: end;
+}
+
+.header__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+
+.control {
+  width: 3rem;
+  border-radius: 0.5rem;
+  height: 1rem;
+  display: flex;
+  background-color: var(--calculator);
+  padding: 0.2rem;
+  margin: auto 0 auto 0;
+  justify-content: center;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 0.5rem;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: var(--check);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+/*
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+*/
+.header__row .col {
+  width: 50%;
+  color: var(--white);
+  font-weight: bolder;
+  font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.header__row .col .box:first-child {
+  display: flex;
+  width: 8rem;
+}
+
+.numbers:first-child{
+  margin: auto 0.5rem auto auto;
+}
+
+.numbers:last-child{
+  margin: auto 0.4rem auto auto;
+}
+
+.header__row .col .box {
+  display: flex;
+}
+
+.header__row .col:first-child {
+  text-align: start;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+
+.header__row .col:last-child .text{
+  text-align: start;
+  font-size: 0.5rem;
+  color: white;
+  margin: auto 0.5rem auto auto;
+}
+
+
+.grapper{
+  background-color: var(--calculator);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: var(--calculator);
+  padding: 0;
+}
+.grid-item {
+  background-color: var(--calculator);
+  padding: 0;
+  font-size: 30px;
+  text-align: center;
+  gap: 3rem;
+}
+
+
+.grid-item button {
+  background: var(--bg-btn);
+  border-radius: var(--radius);
+  height: 50px;
+  line-height: 48px;
+  margin: 9px;
+  width: 75px;
+}
+
+
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0;
+}
+
+.grid-container-2 .grid-item:first-child {
+  color: var(--white);
+  line-height: 45px;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.grid-container-2 .grid-item:first-child button{
+  background-color: var(--reset);
+  width: 90%;
+}
+
+.grid-container-2 .grid-item:last-child {
+  color: var(--white);
+  line-height: 45px;
+  font-weight: bolder;
+  font-size: 0.8rem;
+}
+
+.grid-container-2 .grid-item:last-child button{
+  background-color: var(--equal);
+  width: 90%;
+}
+
+
+.grid-item button {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.grid-item button:hover {opacity: 0.9}
