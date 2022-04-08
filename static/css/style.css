@@ -352,3 +352,9 @@ button:active {
 }
 
 .grid-item button:hover {opacity: 0.9}
+
+.grid-item .op__del{
+  color: white !important;
+  background-color: var(--del) !important;
+  box-shadow: #394c9d 2px 2px !important;
+}
