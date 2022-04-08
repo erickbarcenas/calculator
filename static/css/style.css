@@ -26,6 +26,7 @@
     --calculator: #2e324d;
     --font-family: 'Roboto Condensed';
     --number:#686868;
+    --radius: 10px;
 }
 
 
@@ -313,9 +314,41 @@ button:active {
 }
 
 
-.grid-item button {
+.grid-container .grid-item button {
   opacity: 1;
   transition: 0.3s;
+  border-radius: var(--radius);
+  box-shadow: #c5c5c5 2px 2px;
+  font-size: 1rem;
+  color: #7c7c7c;
+  font-weight: 800;
+}
+
+
+
+
+.grid-container-2 .grid-item {
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: var(--radius);
+  
+}
+
+.grid-container-2 .grid-item button {
+  opacity: 1;
+  transition: 0.3s;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.grid-container-2 .grid-item button .op__reset{
+  box-shadow: #394c9d 2px 2px !important;
+}
+
+.grid-container-2 .grid-item button .op__equal{
+  box-shadow: #a30000 2px 2px;
 }
 
 .grid-item button:hover {opacity: 0.9}
